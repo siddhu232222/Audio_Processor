@@ -1,0 +1,22 @@
+name: Deploy Frontend to Pages
+on:
+  push:
+    branches: ["main"] # Or "master" if that's your branch name
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # This is the magic line that points to your folder
+          path: './frontend'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
