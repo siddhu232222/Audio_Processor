@@ -1,0 +1,91 @@
+{
+  "theme": "dark",
+  "archetype": "ARCHETYPE 2: THE PERFORMANCE PRO (Adapted for Technical Audio Studio)",
+  "typography": {
+    "headings": "Manrope",
+    "body": "JetBrains Mono",
+    "instructions": "Use Manrope for all headings with tracking-tight (e.g., tracking-tight or tracking-tighter). Use JetBrains Mono for timecodes, frequency scales, transcriptions, and numerical data. Do NOT use Inter, Space Grotesk, or generic Sans fonts."
+  },
+  "colors": {
+    "background": "#09090B",
+    "surface": "#121214",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "primary": "#007AFF",
+    "record_active": "#FF3B30",
+    "process_active": "#06B6D4",
+    "success": "#10B981",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "instructions": "Tint grays with a slight cool blue. Use Electric Blaze (#FF3B30) exclusively for recording triggers. Volt Blue (#007AFF) for processing actions. Use sharp contrast."
+  },
+  "visual_enhancers": {
+    "surface_strategy": "GRID BORDERS (The Technical Look)",
+    "instructions": "Expose the skeleton of the UI. Use a border-collapse style layout where sections are divided by 1px solid borders (border-white/10). No soft shadows on cards. Use pure flat colors for surfaces. Add neon glows (drop-shadow) ONLY to active states like the recording waveform."
+  },
+  "grids_layouts": {
+    "strategy": "MODE B: High Density Grid",
+    "instructions": "Use a 12-column grid structure (grid-cols-1 md:grid-cols-12) with tight gaps (gap-4). Never center-everything. Align controls to the left.",
+    "structure": [
+      "Header: col-span-12 (App Title, Status)",
+      "Controls Panel: col-span-12 md:col-span-3 (Record, Play, Process toggles)",
+      "Visualizer Canvas: col-span-12 md:col-span-9 (Large waveform and spectrogram views)",
+      "Transcription & Export Panel: col-span-12 (Bottom section displaying the generated text and download buttons)"
+    ]
+  },
+  "components": {
+    "shadcn_components": ["button", "slider", "dialog", "progress", "toast"],
+    "icons": "lucide-react",
+    "custom_instructions": "Do not use generic HTML <audio> players. Build a custom transport bar (Play, Pause, Stop) using Shadcn buttons that control the waveform visualizer state."
+  },
+  "motion": {
+    "instructions": "Use pulse animations on the record button when active. Provide micro-interactions on all hover states (ensure text/icon color contrasts adequately). DO NOT use 'transition: all'."
+  },
+  "accessibility": {
+    "instructions": "Ensure 4.5:1 contrast for all text. Active focus states must have a high-contrast ring. DO NOT use transparent backgrounds for surfaces containing text without backdrop-blur.",
+    "testing": "All interactive and informational elements MUST include a data-testid attribute (e.g., data-testid='record-button')."
+  },
+  "media_and_libraries": {
+    "canvas_library": "wavesurfer.js",
+    "plugins": "wavesurfer.js/dist/plugins/spectrogram.esm.js, wavesurfer.js/dist/plugins/record.esm.js",
+    "installation_commands": "npm install wavesurfer.js lucide-react",
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1678356434281-0ef01a3ac02d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxyZWNvcmRpbmclMjBzdHVkaW8lMjBtaWNyb3Bob25lfGVufDB8fHx8MTc3NDQ0MjE0MHww&ixlib=rb-4.1.0&q=85",
+        "description": "Studio Microphone in front of monitor",
+        "category": "Hero Banner / Empty State Background Image"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1617994452722-4145e196248b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMHNvdW5kJTIwd2F2ZSUyMGRhcmt8ZW58MHx8fHwxNzc0NDQyMTQwfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract blue light wave",
+        "category": "Processing Overlay / Accent Visual"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a single-page React app (using .js/.jsx, NOT .tsx) focused on professional audio cleanup and transcription.",
+    "Theme must be strictly dark mode, matching a technical audio workstation.",
+    "Integrate wavesurfer.js for both waveform rendering and real-time spectrogram visualization.",
+    "Implement the UI with a technical grid aesthetic: visible 1px borders dividing panels, sharp corners (rounded-none or max rounded-sm), and flat dense surfaces.",
+    "Do not center-align the main application container. Maintain a left-aligned, high-density layout.",
+    "Include a before/after split or toggle for the audio to showcase the 5-8KHz conversion and noise removal.",
+    "Add prominent download buttons for the processed WAV/MP3 and the text transcription.",
+    "Use 'sonner' for all async operation toasts (recording started, processing complete, error states).",
+    "Assign 'data-testid' to every control (buttons, sliders) for automated testing."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this AI slop aesthetic. Create distinctive frontends.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) only where necessary.",
+    "You MUST NOT apply universal transition (e.g., transition: all). Apply specific transitions.",
+    "You MUST NOT center align the app container (.App { text-align: center; }).",
+    "Always use modern button styles (sharp or slightly rounded) with clear interaction animations.",
+    "NEVER use AI assistant Emoji characters (like 🤖, 🧠, etc.) for icons. Use standard icon libraries.",
+    "Every interaction needs micro-animations - hover states, transitions.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures or noise overlays can separate good from extraordinary.",
+    "Prioritize using pre-existing components from src/components/ui when applicable.",
+    "Components MUST use named exports. Pages MUST use default exports."
+  ]
+}
