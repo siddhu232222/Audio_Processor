@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-03-25T12:43:00.599181",
+  "total_tests": 5,
+  "passed_tests": 5,
+  "success_rate": 100.0,
+  "test_details": [
+    {
+      "test": "Root endpoint (/api/)",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "POST /api/status",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "GET /api/status",
+      "success": true,
+      "details": "Retrieved 1 status checks"
+    },
+    {
+      "test": "Audio processing endpoint",
+      "success": true,
+      "details": "Processed 3.00s audio to 8KHz"
+    },
+    {
+      "test": "Audio transcription endpoint",
+      "success": true,
+      "details": "Transcription length: 4 chars"
+    }
+  ]
+}
